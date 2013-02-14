@@ -1,0 +1,150 @@
+/* line 17, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 9, ../scss/screen.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 14, ../scss/screen.scss */
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* line 22, ../scss/screen.scss */
+body {
+  padding: 20px 20px 70px;
+  background: white url("../images/bg_@2X.png");
+  background-size: 320px;
+  font-family: arial;
+}
+
+/* line 29, ../scss/screen.scss */
+#nav {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+/* line 36, ../scss/screen.scss */
+#nav .title {
+  float: left;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 10px 20px;
+  color: #fff;
+  @param user-select(none);
+}
+/* line 44, ../scss/screen.scss */
+#nav .nav-list {
+  float: right;
+}
+/* line 46, ../scss/screen.scss */
+#nav .nav-list .nav-icon {
+  display: block;
+  float: right;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  padding: 10px 0;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+/* line 56, ../scss/screen.scss */
+#nav .nav-list .nav-icon:hover, #nav .nav-list .nav-icon.active {
+  background: #000;
+}
+
+/* line 63, ../scss/screen.scss */
+#canvas {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+/* line 67, ../scss/screen.scss */
+#canvas #pixel-grid {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* line 70, ../scss/screen.scss */
+#canvas #pixel-grid li.pixel {
+  @param user-select(none);
+  float: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  width: 10px;
+  height: 10px;
+}
+/* line 77, ../scss/screen.scss */
+#canvas #pixel-grid li.pixel.colored {
+  background: #333;
+}
