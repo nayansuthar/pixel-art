@@ -1,5 +1,5 @@
 document.onselectstart = function(){ return false; }
-YUI().use('node','gallery-canvas', function (Y) {
+YUI().use("node", function (Y) {
 
   //--DOM
   var body = Y.one ('body');
@@ -32,7 +32,7 @@ YUI().use('node','gallery-canvas', function (Y) {
   var grid_cell_h = 10;
   var canvas = Y.Node.create('<canvas id="canvas" width=\"'+ grid_width*grid_cell_w +'\" height=\"'+ grid_height*grid_cell_h +'\"></canvas>');
   Y.one('#canvas-wrapper').appendChild(canvas);
-  var context = new Y.Canvas.Context2d(canvas);
+  var context = canvas.getDOMNode ().getContext ('2d');
 
 
 
@@ -61,9 +61,8 @@ YUI().use('node','gallery-canvas', function (Y) {
 
   var fillCell =  {
     rect: function () {
-      context.fillStyle = "rgb(200,0,0)";
+      context.fillStyle = tool_color;
       context.fillRect (cell_x, cell_y, grid_cell_w, grid_cell_h);
-      console.log (context.fillStyle);
     }
   }
 
