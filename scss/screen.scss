@@ -60,23 +60,7 @@ body {
     }
 }
 
-#canvas{
-    max-width: 100%;
-    max-height: 100%;
-    overflow: auto;
-    #pixel-grid {
-        border-top: 1px solid $grid-color;
-        border-left: 1px solid $grid-color;
-        li.pixel {
-            @param user-select(none);
-            float: left;
-            border-bottom: 1px solid $grid-color;
-            border-right: 1px solid $grid-color;
-            width: $pixel-size;
-            height: $pixel-size;
-            &.colored {
-                background: #333;
-            }
-        }
-    }
+
+#canvas {
+    border: 1px solid #333;
 }

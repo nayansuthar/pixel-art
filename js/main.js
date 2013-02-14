@@ -1,72 +1,70 @@
-YUI().use('node', function (Y) {
+document.onselectstart = function(){ return false; }
+YUI().use('node','gallery-canvas', function (Y) {
 
-  //values
+  //--DOM
+  var body = Y.one ('body');
+
+  //--Navigation
+  var t_all_icons = Y.all ('.nav-icon');
+  var t_brush = Y.one ('#brush');
+  var t_eraser = Y.one ('#eraser');
+  var t_clear_all = Y.one ('#clear-all');
+  var tool_color = '#888402';
+  var tool = 1; //0=eraser; 1=brush;
+  t_eraser.on ('click', function (e) {
+    tool = 0;
+    t_all_icons.removeClass ('active');
+    t_eraser.addClass ('active');
+  });
+
+  t_brush.on ('click', function (e) {
+    tool = 1;
+    t_all_icons.removeClass ('active');
+    t_brush.addClass ('active');
+  });
+
+
+  //--Generate-canvas
   var grid_width = 100;
   var grid_height = 40;
-  var pixel_size = 10;
+  var grid_type = 'rect'; //rect=rectangle;
+  var grid_cell_w = 10;
+  var grid_cell_h = 10;
+  var canvas = Y.Node.create('<canvas id="canvas" width=\"'+ grid_width*grid_cell_w +'\" height=\"'+ grid_height*grid_cell_h +'\"></canvas>');
+  Y.one('#canvas-wrapper').appendChild(canvas);
+  var context = new Y.Canvas.Context2d(canvas);
 
-  //elements
-  var pixel_grid = Y.one ('#pixel-grid');
-  var pixels= Y.all ('.pixel');
-  var body = Y.one ('body');
-  var clear_all = Y.one ('#clear-all');
-  var eraser = Y.one ('#eraser');
-  var brush = Y.one ('#brush');
-  var nav_icons = Y.all ('.nav-icon');
 
-  //generate-grid
-  pixel_grid.setStyle ('width', (grid_width*pixel_size)+1 +'px');
-  pixel_grid.setStyle ('height', (grid_height*pixel_size)+1 +'px');
-  for (i=1; i<=grid_width*grid_height; i++) {
-    pixel_grid.append ('<li class="pixel"></li>');
+
+  //--Mouse-status
+  var mouse_x = 0;
+  var mouse_y = 0;
+  var mouse_left = 0;
+  var mouse_right = 0;
+  canvas.on ("mousedown", function (event) {mouse_left = 1;});
+  body.on ("mouseup", function (event) {mouse_left = 0;});
+  //--cell
+  var cell_x = 0;
+  var cell_y = 0;
+
+
+  canvas.on ("mousemove", function (e) {
+    mouse_x = e.pageX-canvas.getX ();
+    mouse_y = e.pageY-canvas.getY ();
+    cell_x = Math.floor(mouse_x/grid_cell_w)*grid_cell_w;
+    cell_y = Math.floor(mouse_y/grid_cell_h)*grid_cell_h;
+    if (mouse_left==1) {
+      fillCell [grid_type] ();
+    }
+  });
+
+
+  var fillCell =  {
+    rect: function () {
+      context.fillStyle = "rgb(200,0,0)";
+      context.fillRect (cell_x, cell_y, grid_cell_w, grid_cell_h);
+      console.log (context.fillStyle);
+    }
   }
-  var pixels= Y.all ('.pixel');
-
-
-
-  //Mouse-status
-  var mouse_clicked = 0;
-  pixel_grid.on ("mousedown", function (event) {mouse_clicked = 1;});
-  body.on ("mouseup", function (event) {mouse_clicked = 0;});
-
-
-  //tool-selected
-  var tool = 1; //0=eraser; 1=brush;
-  eraser.on ('click', function (e) {
-    tool = 0;
-    nav_icons.removeClass ('active');
-    eraser.addClass ('active');
-  });
-
-  brush.on ('click', function (e) {
-    tool = 1;
-    nav_icons.removeClass ('active');
-    brush.addClass ('active');
-  });
-
-  //click-toggle
-  pixel_grid.delegate ("click", function (event) {
-    event.currentTarget.toggleClass ("colored");
-  }, ".pixel");
-
-  //tool-move
-  pixel_grid.delegate ("mousemove", function (event) {
-    if (mouse_clicked==1) {
-      switch (tool) {
-      case 0:
-        event.currentTarget.removeClass ("colored");
-        break;
-      case 1:
-        event.currentTarget.addClass ("colored");
-      }
-    };
-  }, ".pixel");
-
-  //clear-all-call
-  clear_all.on ('click', function (e) {
-    pixels.removeClass("colored");
-  });
-
-
 
 });
