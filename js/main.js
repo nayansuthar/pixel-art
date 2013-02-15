@@ -7,8 +7,8 @@ YUI().use("node", function (Y) {
   var body = Y.one ('body');
 
   //--Set-values
-  var grid_width = 100;
-  var grid_height = 50;
+  var grid_width = 50;
+  var grid_height = 25;
   var grid_type = 'rect'; //rect=rectangle;
   var grid_cell_w = 10;
   var grid_cell_h = 10;
@@ -73,13 +73,14 @@ YUI().use("node", function (Y) {
   var mouse_y = 0;
   var mouse_left = 0;
   var mouse_right = 0;
-  canvas.on ("mousedown", function (event) {mouse_left = 1;});
-  body.on ("mouseup", function (event) {mouse_left = 0;});
+  canvas.on ("mousedown", function (event) {
+    if (event.button == 1) {mouse_left = 1;}
+  });
+  body.on ("mouseup", function (event) {mouse_left = 0; mouse_right = 0;});
 
   //--cell
   var cell_x = 0;
   var cell_y = 0;
-
 
   canvas.on ("mousemove", function (e) {
     mouse_x = e.pageX-canvas.getX ();
@@ -90,6 +91,20 @@ YUI().use("node", function (Y) {
       fillCell [grid_type] ();
     }
     if (mouse_left==1 && tool==0) {
+      eraseCell [grid_type] ();
+    }
+
+  });
+
+  canvas.on ("click", function (e) {
+    mouse_x = e.pageX-canvas.getX ();
+    mouse_y = e.pageY-canvas.getY ();
+    cell_x = Math.floor(mouse_x/grid_cell_w)*grid_cell_w;
+    cell_y = Math.floor(mouse_y/grid_cell_h)*grid_cell_h;
+    if (tool==1) {
+      fillCell [grid_type] ();
+    }
+    if (tool==0) {
       eraseCell [grid_type] ();
     }
   });
