@@ -8,10 +8,10 @@ YUI().use("node", function (Y) {
 
   //--Set-values
   var grid_width = 100;
-  var grid_height = 40;
+  var grid_height = 20;
   var grid_type = 'rect'; //rect=rectangle;
   var grid_cell_w = 10;
-  var grid_cell_h = 10;
+  var grid_cell_h = 20;
   var canvas_width = grid_width*grid_cell_w;
   var canvas_height = grid_height*grid_cell_h;
 
@@ -49,7 +49,7 @@ YUI().use("node", function (Y) {
   Y.one('#canvas-wrapper').appendChild(canvas);
   var context = canvas.getDOMNode ().getContext ('2d');
 
-  //Generate-background-grid
+  //Generate-canvas-background-grid
   var canvas_bg = Y.Node.create('<canvas id="canvas-bg" width=\"'+ grid_cell_w +'\" height=\"'+ grid_cell_h +'\" style="display:block;"></canvas>');
   Y.one('#canvas-wrapper').appendChild(canvas);
   var bg_context = canvas_bg.getDOMNode ().getContext ('2d');
@@ -57,9 +57,9 @@ YUI().use("node", function (Y) {
   bg_context.moveTo (0, 0);
   bg_context.lineTo (grid_cell_w, 0);
   bg_context.lineTo (grid_cell_w, grid_cell_h);
-  bg_context.lineStyle= "rgba(0,0,0,0.2)";
+  bg_context.strokeStyle= "rgba(0,0,0,0.2)";
   bg_context.stroke ();
-  var bg_url = canvas_bg.getDOMNode.toDataURL();
+  var bg_url = canvas_bg.getDOMNode ().toDataURL();
   var bg_style = 'url('+ bg_url +')';
   canvas.setStyle ('background', bg_style);
 
