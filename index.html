@@ -24,14 +24,32 @@
     <div id="nav">
       <h1 class="title">Pixel Art</h1>
       <div class="nav-list">
-        <div class="nav-icon" id="clear-all">X</div>
-        <div class="nav-icon" id="eraser">E</div>
-        <div class="nav-icon active" id="brush">B</div>
-        <input type="color" name="color" class="nav-icon" id="color"/>
+        <div class="nav-icon" id="clear-all"><span>X</span></div>
+        <div class="nav-icon" id="eraser"><span>E</span></div>
+        <div class="nav-icon active" id="brush"><span>B</span></div>
+        <div class="nav-icon" id="color"><span>C</span></div>
       </div>
     </div>
     <div id="canvas-wrapper">
     </div>
+
+    <div id="color-picker">
+      <div id="color-hue">
+        <span class="range-button"></span>
+      </div>
+      <div id="color-sl">
+        <canvas id="color-sl-bg" width="280" height="280"></canvas>
+        <span class="range-button">
+          <span class="range-button-1"></span>
+          <span class="range-button-2"></span>
+          <span class="range-button-3"></span>
+          <span class="range-button-4"></span>
+        </span>
+      </div>
+
+      <div id="color-preview"></div>
+    </div>
+
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

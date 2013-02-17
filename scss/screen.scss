@@ -1,5 +1,5 @@
 @import "compass/reset";
-
+@import "compass";
 
 //======VARIABLES
 $pixel-size: 10px;
@@ -33,6 +33,7 @@ body {
     bottom: 0;
     left: 0;
     background: rgba(0,0,0,0.8);
+    z-index : 999999;
     .title {
         float: left;
         font-size: 18px;
@@ -63,4 +64,67 @@ body {
 
 #canvas {
     border: 1px solid #333;
+}
+
+#color-picker {
+    width: 300px;
+    height: 450px;
+    background: #222;
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    @include border-radius(2px);
+    border: 1px solid #111;
+    padding: 10px;
+    #color-hue{
+        height: 30px;
+        width: 280px;
+        margin: 20px 0;
+        background: url('../images/hue_scale.png');
+        background-size: 100% 100%;
+        .range-button {
+            display: block;
+            width: 1px;
+            height: 10px;
+            position: absolute;
+            top: -10px;
+            left: -1px;
+            background: white;
+        }
+    }
+    #color-sl{
+        height: 280px;
+        width: 280px;
+        margin: 20px 0;
+        background: white;
+        background-size: 100% 100%;
+        .range-button {
+            display: block;
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            top: 100%;
+            left: 100%;
+            .range-button-1, .range-button-2 {
+                position: absolute;
+                width: 10px;
+                height: 1px;
+                background: white;
+            }
+            .range-button-3, .range-button-4 {
+                position: absolute;
+                width: 1px;
+                height: 10px;
+                background: white;
+            }
+            .range-button-1 {top: -5px; left: -5px;}
+            .range-button-2 {bottom: -5px; left: -5px;}
+            .range-button-3 {left: -5px; top: -5px;}
+            .range-button-4 {right: -5px; top: -5px;}
+        }
+    }
+    #color-preview {
+        height: 30px;
+        background: #000;
+    }
 }
