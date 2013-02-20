@@ -14,11 +14,11 @@ YUI().use("node", "color-base", function (Y) {
 
 
   //--Set-values
-  var grid_width = 50;
-  var grid_height = 25;
   var grid_type = 'rect'; //rect=rectangle;
   var grid_cell_w = 20;
   var grid_cell_h = 20;
+  var grid_width = Math.floor((body.get ('offsetWidth') - 40) /grid_cell_w);
+  var grid_height = Math.floor((body.get ('offsetHeight') - 90)/grid_cell_h);
   var canvas_width = grid_width*grid_cell_w;
   var canvas_height = grid_height*grid_cell_h;
 

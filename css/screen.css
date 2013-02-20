@@ -79,58 +79,55 @@ html, body {
 
 /* line 22, ../scss/screen.scss */
 body {
-  padding: 20px 20px 70px;
-  background: white url("../images/bg_@2X.png");
-  background-size: 320px;
   font-family: arial;
 }
 
-/* line 29, ../scss/screen.scss */
+/* line 26, ../scss/screen.scss */
+.main-page-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 70px 20px 20px;
+  background: white url("../images/bg_@2X.png");
+  background-size: 320px;
+}
+
+/* line 34, ../scss/screen.scss */
 #nav {
   width: 100%;
   height: 50px;
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.8);
   z-index: 999999;
+  background: rgba(0, 0, 0, 0.02);
 }
-/* line 37, ../scss/screen.scss */
-#nav .title {
-  float: left;
-  font-size: 18px;
-  line-height: 30px;
-  padding: 10px 20px;
-  color: #fff;
-  @param user-select(none);
-}
-/* line 45, ../scss/screen.scss */
+/* line 42, ../scss/screen.scss */
 #nav .nav-list {
-  float: right;
+  float: left;
 }
-/* line 47, ../scss/screen.scss */
+/* line 44, ../scss/screen.scss */
 #nav .nav-list .nav-icon {
   display: block;
-  float: right;
+  float: left;
   width: 50px;
   height: 50px;
-  color: #fff;
+  color: #333;
   padding: 10px 0;
   line-height: 30px;
   text-align: center;
   cursor: pointer;
 }
-/* line 57, ../scss/screen.scss */
+/* line 54, ../scss/screen.scss */
 #nav .nav-list .nav-icon:hover, #nav .nav-list .nav-icon.active {
   background: #000;
 }
 
-/* line 65, ../scss/screen.scss */
+/* line 62, ../scss/screen.scss */
 #canvas {
   border: 1px solid #333;
 }
 
-/* line 69, ../scss/screen.scss */
+/* line 66, ../scss/screen.scss */
 #color-picker {
   width: 300px;
   height: 450px;
@@ -146,7 +143,7 @@ body {
   border: 1px solid #111;
   padding: 10px;
 }
-/* line 79, ../scss/screen.scss */
+/* line 76, ../scss/screen.scss */
 #color-picker #color-hue {
   height: 30px;
   width: 280px;
@@ -154,7 +151,7 @@ body {
   background: url("../images/hue_scale.png");
   background-size: 100% 100%;
 }
-/* line 85, ../scss/screen.scss */
+/* line 82, ../scss/screen.scss */
 #color-picker #color-hue .range-button {
   display: block;
   width: 1px;
@@ -164,7 +161,7 @@ body {
   left: -1px;
   background: white;
 }
-/* line 95, ../scss/screen.scss */
+/* line 92, ../scss/screen.scss */
 #color-picker #color-sl {
   height: 280px;
   width: 280px;
@@ -172,7 +169,7 @@ body {
   background: white;
   background-size: 100% 100%;
 }
-/* line 101, ../scss/screen.scss */
+/* line 98, ../scss/screen.scss */
 #color-picker #color-sl .range-button {
   display: block;
   width: 0px;
@@ -181,41 +178,41 @@ body {
   top: 100%;
   left: 100%;
 }
-/* line 108, ../scss/screen.scss */
+/* line 105, ../scss/screen.scss */
 #color-picker #color-sl .range-button .range-button-1, #color-picker #color-sl .range-button .range-button-2 {
   position: absolute;
   width: 10px;
   height: 1px;
   background: white;
 }
-/* line 114, ../scss/screen.scss */
+/* line 111, ../scss/screen.scss */
 #color-picker #color-sl .range-button .range-button-3, #color-picker #color-sl .range-button .range-button-4 {
   position: absolute;
   width: 1px;
   height: 10px;
   background: white;
 }
-/* line 120, ../scss/screen.scss */
+/* line 117, ../scss/screen.scss */
 #color-picker #color-sl .range-button .range-button-1 {
   top: -5px;
   left: -5px;
 }
-/* line 121, ../scss/screen.scss */
+/* line 118, ../scss/screen.scss */
 #color-picker #color-sl .range-button .range-button-2 {
   bottom: -5px;
   left: -5px;
 }
-/* line 122, ../scss/screen.scss */
+/* line 119, ../scss/screen.scss */
 #color-picker #color-sl .range-button .range-button-3 {
   left: -5px;
   top: -5px;
 }
-/* line 123, ../scss/screen.scss */
+/* line 120, ../scss/screen.scss */
 #color-picker #color-sl .range-button .range-button-4 {
   right: -5px;
   top: -5px;
 }
-/* line 126, ../scss/screen.scss */
+/* line 123, ../scss/screen.scss */
 #color-picker #color-preview {
   height: 30px;
   background: #000;

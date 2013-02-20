@@ -20,36 +20,33 @@ html, body {
 
 //======STYLES
 body {
-    padding: 20px 20px 70px;
+    font-family: arial;
+}
+
+.main-page-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 70px 20px 20px;
     background: white url("../images/bg_@2X.png");
     background-size: 320px;
-    font-family: arial;
 }
 
 #nav{
     width: 100%;
     height: 50px;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    top : 0;
     left: 0;
-    background: rgba(0,0,0,0.8);
     z-index : 999999;
-    .title {
-        float: left;
-        font-size: 18px;
-        line-height: 30px;
-        padding: 10px 20px;
-        color: #fff;
-        @param user-select(none);
-    }
+    background: rgba(0,0,0,0.02);
     .nav-list {
-        float: right;
+        float: left;
         .nav-icon {
             display: block;
-            float: right;
+            float: left;
             width: 50px;
             height: 50px;
-            color: #fff;
+            color: #333;
             padding: 10px 0;
             line-height: 30px;
             text-align: center;
