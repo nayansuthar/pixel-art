@@ -1,4 +1,4 @@
 pixel-art
 =========
 
-A HTML5 Canvas Experiment.
+An HTML5 Canvas Experiment.
